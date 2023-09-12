@@ -1,7 +1,7 @@
 # Predição Bitcoin
 
 Descrição:\
-Predição Realizada apenas com regressão linear, não considerando fatores externos, apenas estatística.
+Predição realizada apenas com regressão linear, não considerando fatores externos, apenas estatística.
 
 ---
 
@@ -15,4 +15,6 @@ Carregamento e Limpeza da base:
 Exploração e Visualização:
 - Plotando gráficos para melhor visualização da tendência dos preços ao longo dos anos.
 
-
+Experimentos e Predições:
+- Criar arrays para criar e treinar o modelo.
+- Criar novos dados para inserir nas colunas independentes e testar o modelo.
