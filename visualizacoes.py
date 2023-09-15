@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-from main import dados
+from preparacao_dados import dados
 
 # Plotando gráficos para entender os dados
 datas = list(dados['time'])
@@ -12,19 +12,19 @@ for data in datas:
 plt.plot(datas, valores)
 plt.xlabel("Anos")
 plt.ylabel("Preço (USD)")
-plt.title("Valor do Bitcoin x Ano")
+plt.title("Valor do Bitcoin x Ano (Valor Real)")
 plt.show()
 
 # Grafico de barra
 plt.bar(anos, valores)
 plt.xlabel("Anos")
 plt.ylabel("Preço (USD)")
-plt.title("Valor do Bitcoin x Ano")
+plt.title("Valor do Bitcoin x Ano (Valor Real)")
 plt.show()
 
 # Grafico de pontos
 plt.scatter(datas, valores)
 plt.xlabel("Anos")
 plt.ylabel("Preço (USD)")
-plt.title("Valor do Bitcoin x Ano")
+plt.title("Valor do Bitcoin x Ano (Valor Real)")
 plt.show()
