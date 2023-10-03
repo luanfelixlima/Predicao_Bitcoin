@@ -33,14 +33,20 @@ dados['mes'] = dados['time'].dt.month
 dados['ano'] = dados['time'].dt.year
 dados['Preco'] = dados['PriceUSD']
 
+# Dados que iremos usar para regressão (dados reais)
 dados_regressao = dados[['dia', 'mes', 'ano', 'Preco']]
+dias = 15 # Quantidade de dias que usaremos para pegar os dados para treinar o modelo
+meses = 0 # Quantidade de meses que usaremos para pegar os dados para treinar o modelo
+anos = 0 # Quantidade de anos que usaremos para pegar os dados para treinar o modelo
+soma_tempo = ((anos * 365) + (meses * 31) + dias)
+dados_regressao = dados_regressao.tail(soma_tempo) 
 print("Dados prontos para experimentos:")
 print(dados_regressao)
 
 # Criando novos valores para predições (x dias para frente)
 last_date = list(dados['time'].tail(1))  # pegando a última data
 datas_futuras = []
-dias_prever = 30
+dias_prever = 3
 
 # Loop add dias
 for i in range(1, dias_prever + 1):  # somando de 1 a 10 dias na última data do df
@@ -49,7 +55,7 @@ for i in range(1, dias_prever + 1):  # somando de 1 a 10 dias na última data do
 
 # Criando novo DF com as futuras datas
 # print("novos valores de x:\n", datas_futuras, "\n")
-print(f"Dados para testes ({dias_prever} dias):")
+print(f"\nDados para testes ({dias_prever} dias):")
 datas_futuras = {'DatasFuturas': datas_futuras}
 
 datas_futuras = pd.DataFrame(datas_futuras)
